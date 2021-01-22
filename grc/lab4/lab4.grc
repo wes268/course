@@ -354,7 +354,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [880, 194]
+    coordinate: [1296, 207]
     rotation: 0
     state: enabled
 - name: iir_taps
@@ -366,7 +366,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1028, 197]
+    coordinate: [1187, 197]
     rotation: 0
     state: enabled
 - name: iir_taps_2
@@ -458,7 +458,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1028, 135]
+    coordinate: [883, 193]
     rotation: 0
     state: enabled
 - name: samp_rate

@@ -22,11 +22,11 @@
 # Setup library
 ########################################################################
 include(GrPlatform) #define LIB_SUFFIX
-
 list(APPEND wes_sources
     costas_cc_impl.cc
     ber_impl.cc
-)
+    hamming_encoder_impl.cc
+    hamming_decoder_impl.cc )
 
 set(wes_sources "${wes_sources}" PARENT_SCOPE)
 if(NOT wes_sources)

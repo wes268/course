@@ -17,8 +17,9 @@
 # along with GNU Radio; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
-
 install(FILES
     wes_costas_cc.block.yml
-    wes_ber.block.yml DESTINATION share/gnuradio/grc/blocks
+    wes_ber.block.yml
+    wes_hamming_encoder.block.yml
+    wes_hamming_decoder.block.yml DESTINATION share/gnuradio/grc/blocks
 )

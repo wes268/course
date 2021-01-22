@@ -393,8 +393,8 @@ class lab1(gr.top_block, Qt.QWidget):
         ##################################################
         self.connect((self.analog_agc_xx_0, 0), (self.blocks_complex_to_imag_0, 0))
         self.connect((self.analog_agc_xx_0, 0), (self.blocks_complex_to_real_0, 0))
-        self.connect((self.analog_agc_xx_0, 0), (self.qtgui_const_sink_x_0, 0))
         self.connect((self.analog_agc_xx_0, 0), (self.qtgui_const_sink_x_0, 1))
+        self.connect((self.analog_agc_xx_0, 0), (self.qtgui_const_sink_x_0, 0))
         self.connect((self.analog_agc_xx_0, 0), (self.qtgui_freq_sink_x_0_0, 0))
         self.connect((self.analog_agc_xx_0, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.analog_random_source_x_0, 0), (self.digital_psk_mod_0_0, 0))

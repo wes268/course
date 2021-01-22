@@ -10,9 +10,16 @@
 %{
 #include "wes/costas_cc.h"
 #include "wes/ber.h"
+#include "wes/hamming_encoder.h"
+#include "wes/hamming_decoder.h"
 %}
 
 %include "wes/costas_cc.h"
 GR_SWIG_BLOCK_MAGIC2(wes, costas_cc);
 %include "wes/ber.h"
 GR_SWIG_BLOCK_MAGIC2(wes, ber);
+%include "wes/hamming_encoder.h"
+GR_SWIG_BLOCK_MAGIC2(wes, hamming_encoder);
+
+%include "wes/hamming_decoder.h"
+GR_SWIG_BLOCK_MAGIC2(wes, hamming_decoder);

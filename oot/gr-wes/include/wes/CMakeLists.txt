@@ -24,5 +24,7 @@
 install(FILES
     api.h
     costas_cc.h
-    ber.h DESTINATION include/wes
+    ber.h
+    hamming_encoder.h
+    hamming_decoder.h DESTINATION include/wes
 )
