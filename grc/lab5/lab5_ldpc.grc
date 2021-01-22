@@ -99,7 +99,7 @@ blocks:
     dim1: '1'
     dim2: '1'
     matrix_object: G
-    max_iterations: '100'
+    max_iterations: nIterations
     ndim: '0'
     value: '"ok"'
   states:
@@ -162,12 +162,12 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '100'
+    value: '5'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [976, 71]
+    coordinate: [203, 145]
     rotation: 0
     state: enabled
 - name: reset_ber

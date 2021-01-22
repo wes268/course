@@ -82,7 +82,7 @@ class lab5_ldpc(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.nIterations = nIterations = 100
+        self.nIterations = nIterations = 5
         self.H = H = fec.ldpc_H_matrix('/usr/share/gnuradio/fec/ldpc/n_0300_k_0152_gap_03.alist', 3)
         self.G = G = fec.ldpc_G_matrix(gr.prefix() + "/share/gnuradio/fec/ldpc/" + "n_0100_k_0058_gen_matrix.alist")
         self.samp_rate = samp_rate = 32e3
@@ -90,7 +90,7 @@ class lab5_ldpc(gr.top_block, Qt.QWidget):
         self.ldpc_enc_H = ldpc_enc_H = fec.ldpc_par_mtrx_encoder_make_H(H)
         self.ldpc_enc_G = ldpc_enc_G = fec.ldpc_gen_mtrx_encoder_make(G)
         self.ldpc_dec_H = ldpc_dec_H = fec.ldpc_bit_flip_decoder.make(H.get_base_sptr(),nIterations)
-        self.ldpc_dec_G = ldpc_dec_G = fec.ldpc_bit_flip_decoder.make(G.get_base_sptr(),100)
+        self.ldpc_dec_G = ldpc_dec_G = fec.ldpc_bit_flip_decoder.make(G.get_base_sptr(),nIterations)
         self.eb_no_db = eb_no_db = 10
         self.R_ldpc = R_ldpc = 152/300
 

@@ -232,8 +232,8 @@ class lab5_qpsk(gr.top_block, Qt.QWidget):
         self.connect((self.digital_chunks_to_symbols_xx_0_0, 0), (self.blocks_add_xx_0_0, 0))
         self.connect((self.digital_constellation_decoder_cb_0, 0), (self.wes_ber_0, 0))
         self.connect((self.digital_constellation_decoder_cb_0_0, 0), (self.wes_ber_0_0, 1))
-        self.connect((self.wes_ber_0, 0), (self.qtgui_number_sink_0_0_0_0, 0))
         self.connect((self.wes_ber_0, 1), (self.qtgui_number_sink_0_0_0_0, 1))
+        self.connect((self.wes_ber_0, 0), (self.qtgui_number_sink_0_0_0_0, 0))
         self.connect((self.wes_ber_0_0, 1), (self.qtgui_number_sink_0_0_0_0_0, 1))
         self.connect((self.wes_ber_0_0, 0), (self.qtgui_number_sink_0_0_0_0_0, 0))
 
