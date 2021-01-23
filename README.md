@@ -12,6 +12,15 @@ To begin with, make sure to run the install script
 
 Note: this will require you to enter the password for sudo mode
 
+## Adding Python Paths for Manual Installations
+
+add the following three lines to your .profile or .bashrc file in your home directory
+
+    # gnuradio
+    export PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages/gnuradio
+    export PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages/
+    export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3/dist-packages/
+
 ## Updating the firmware to AD9364
 
 In order to detect FM band signals we need to change the firmware so that the plutoSDR is recognized as a AD9364, this allows for a frequency range to 70Mhz to 6GHz
