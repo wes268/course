@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1ofdm_1_1pilot__comp__cc__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::ofdm::pilot_comp_cc_impl</compoundname>
+    <basecompoundref refid="classgr_1_1ofdm_1_1pilot__comp__cc" prot="public" virt="non-virtual">gr::ofdm::pilot_comp_cc</basecompoundref>
+    <includes refid="pilot__comp__cc__impl_8h" local="no">pilot_comp_cc_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1add84ebbd5c637f0481ac68d904d978a3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::ofdm::pilot_comp_cc_impl::d_fft_len</definition>
+        <argsstring></argsstring>
+        <name>d_fft_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" line="33" column="11" bodyfile="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a29b48479026ec30726b31bfe10d8f6b8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::ofdm::pilot_comp_cc_impl::d_apply_comp</definition>
+        <argsstring></argsstring>
+        <name>d_apply_comp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" line="34" column="11" bodyfile="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a734e651e6740013f5c896015cb93239c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::ofdm::pilot_comp_cc_impl::d_num_syms</definition>
+        <argsstring></argsstring>
+        <name>d_num_syms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" line="35" column="11" bodyfile="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a39b222c2ac3835176dfed323b91bcc16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::ofdm::pilot_comp_cc_impl::pilot_comp_cc_impl</definition>
+        <argsstring>(int fft_len, int apply_comp, int num_syms)</argsstring>
+        <name>pilot_comp_cc_impl</name>
+        <param>
+          <type>int</type>
+          <declname>fft_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>apply_comp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_syms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" line="38" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1ae8a9203efe8c7ace75c46e971ac8fbb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::ofdm::pilot_comp_cc_impl::~pilot_comp_cc_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~pilot_comp_cc_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" line="39" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a8a42530cc7019bb89ffa34893bc3057d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::ofdm::pilot_comp_cc_impl::forecast</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items_required)</argsstring>
+        <name>forecast</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items_required</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" line="42" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a3b58a26c4997597022438f1632cc1659" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::ofdm::pilot_comp_cc_impl::general_work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>general_work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" line="44" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a1f59cb8d5a421d94e4cf01e5bea6a7ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void gr::ofdm::pilot_comp_cc_impl::toggle_comp</definition>
+        <argsstring>(int apply_comp)</argsstring>
+        <name>toggle_comp</name>
+        <reimplements refid="classgr_1_1ofdm_1_1pilot__comp__cc_1a469f1448a9b402c1b1a4b4ab321454e0">toggle_comp</reimplements>
+        <param>
+          <type>int</type>
+          <declname>apply_comp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" line="49" column="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>gr::block</label>
+      </node>
+      <node id="1">
+        <label>gr::ofdm::pilot_comp_cc_impl</label>
+        <link refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::ofdm::pilot_comp_cc</label>
+        <link refid="classgr_1_1ofdm_1_1pilot__comp__cc"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>gr::block</label>
+      </node>
+      <node id="1">
+        <label>gr::ofdm::pilot_comp_cc_impl</label>
+        <link refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::ofdm::pilot_comp_cc</label>
+        <link refid="classgr_1_1ofdm_1_1pilot__comp__cc"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" line="30" column="1" bodyfile="/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h" bodystart="29" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a29b48479026ec30726b31bfe10d8f6b8" prot="private" virt="non-virtual"><scope>gr::ofdm::pilot_comp_cc_impl</scope><name>d_apply_comp</name></member>
+      <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1add84ebbd5c637f0481ac68d904d978a3" prot="private" virt="non-virtual"><scope>gr::ofdm::pilot_comp_cc_impl</scope><name>d_fft_len</name></member>
+      <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a734e651e6740013f5c896015cb93239c" prot="private" virt="non-virtual"><scope>gr::ofdm::pilot_comp_cc_impl</scope><name>d_num_syms</name></member>
+      <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a8a42530cc7019bb89ffa34893bc3057d" prot="public" virt="non-virtual"><scope>gr::ofdm::pilot_comp_cc_impl</scope><name>forecast</name></member>
+      <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a3b58a26c4997597022438f1632cc1659" prot="public" virt="non-virtual"><scope>gr::ofdm::pilot_comp_cc_impl</scope><name>general_work</name></member>
+      <member refid="classgr_1_1ofdm_1_1pilot__comp__cc_1acf8178204344b9f1eef47800d99ff963" prot="public" virt="non-virtual"><scope>gr::ofdm::pilot_comp_cc_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a39b222c2ac3835176dfed323b91bcc16" prot="public" virt="non-virtual"><scope>gr::ofdm::pilot_comp_cc_impl</scope><name>pilot_comp_cc_impl</name></member>
+      <member refid="classgr_1_1ofdm_1_1pilot__comp__cc_1ac21520c69b3ee744213afb97b0b39ab1" prot="public" virt="non-virtual"><scope>gr::ofdm::pilot_comp_cc_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a1f59cb8d5a421d94e4cf01e5bea6a7ba" prot="public" virt="virtual"><scope>gr::ofdm::pilot_comp_cc_impl</scope><name>toggle_comp</name></member>
+      <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1ae8a9203efe8c7ace75c46e971ac8fbb1" prot="public" virt="non-virtual"><scope>gr::ofdm::pilot_comp_cc_impl</scope><name>~pilot_comp_cc_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

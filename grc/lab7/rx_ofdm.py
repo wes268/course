@@ -40,7 +40,7 @@ from gnuradio import eng_notation
 from gnuradio.digital.utils import tagged_streams
 from gnuradio.qtgui import Range, RangeWidget
 import iio
-import wes
+import ofdm
 from gnuradio import qtgui
 
 class rx_ofdm(gr.top_block, Qt.QWidget):
@@ -86,7 +86,7 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.payload_mod = payload_mod = digital.constellation_qpsk()
         self.packet_length_tag_key = packet_length_tag_key = "packet_len"
         self.occupied_carriers = occupied_carriers = (list(range(-26, -21)) + list(range(-20, -7)) + list(range(-6, 0)) + list(range(1, 7)) + list(range(8, 21)) + list(range(22, 27)),)
-        self.num_syms = num_syms = 1
+        self.num_syms = num_syms = 20
         self.length_tag_key = length_tag_key = "frame_len"
         self.header_mod = header_mod = digital.constellation_bpsk()
         self.fft_len = fft_len = 64
@@ -105,7 +105,9 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.header_formatter = header_formatter = digital.packet_header_ofdm(occupied_carriers, n_syms=1, len_tag_key=packet_length_tag_key, frame_len_tag_key=length_tag_key, bits_per_header_sym=header_mod.bits_per_symbol(), bits_per_payload_sym=payload_mod.bits_per_symbol(), scramble_header=False)
         self.header_equalizer = header_equalizer = digital.ofdm_equalizer_static(fft_len,  occupied_carriers, pilot_carriers, pilot_symbols,0,True)
         self.freqc = freqc = 900e6
+        self.fo = fo = 0
         self.cp_delay = cp_delay = 0
+        self.apply_comp_f = apply_comp_f = 1
         self.apply_comp = apply_comp = 1
 
         ##################################################
@@ -167,6 +169,13 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(4, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
+        self._fo_range = Range(-100e3, 100e3, 1, 0, 200)
+        self._fo_win = RangeWidget(self._fo_range, self.set_fo, 'Frequency Offset (Hz)', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._fo_win, 14, 0, 1, 8)
+        for r in range(14, 15):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(0, 8):
+            self.top_grid_layout.setColumnStretch(c, 1)
         self._cp_delay_range = Range(0, 3, 1, 0, 200)
         self._cp_delay_win = RangeWidget(self._cp_delay_range, self.set_cp_delay, 'CP Delay (samples)', "counter_slider", float)
         self.top_grid_layout.addWidget(self._cp_delay_win, 12, 4, 1, 4)
@@ -174,7 +183,28 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(4, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self.wes_ofdm_pilot_comp_cc_0 = wes.ofdm_pilot_comp_cc(fft_len, pilot_carriers, pilot_symbols, apply_comp, 32)
+        _apply_comp_f_check_box = Qt.QCheckBox('Apply Freq Comp?')
+        self._apply_comp_f_choices = {True: 1, False: 0}
+        self._apply_comp_f_choices_inv = dict((v,k) for k,v in self._apply_comp_f_choices.items())
+        self._apply_comp_f_callback = lambda i: Qt.QMetaObject.invokeMethod(_apply_comp_f_check_box, "setChecked", Qt.Q_ARG("bool", self._apply_comp_f_choices_inv[i]))
+        self._apply_comp_f_callback(self.apply_comp_f)
+        _apply_comp_f_check_box.stateChanged.connect(lambda i: self.set_apply_comp_f(self._apply_comp_f_choices[bool(i)]))
+        self.top_grid_layout.addWidget(_apply_comp_f_check_box, 11, 6, 1, 2)
+        for r in range(11, 12):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(6, 8):
+            self.top_grid_layout.setColumnStretch(c, 1)
+        _apply_comp_check_box = Qt.QCheckBox('Apply Pilot Comp?')
+        self._apply_comp_choices = {True: 1, False: 0}
+        self._apply_comp_choices_inv = dict((v,k) for k,v in self._apply_comp_choices.items())
+        self._apply_comp_callback = lambda i: Qt.QMetaObject.invokeMethod(_apply_comp_check_box, "setChecked", Qt.Q_ARG("bool", self._apply_comp_choices_inv[i]))
+        self._apply_comp_callback(self.apply_comp)
+        _apply_comp_check_box.stateChanged.connect(lambda i: self.set_apply_comp(self._apply_comp_choices[bool(i)]))
+        self.top_grid_layout.addWidget(_apply_comp_check_box, 11, 4, 1, 2)
+        for r in range(11, 12):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(4, 6):
+            self.top_grid_layout.setColumnStretch(c, 1)
         self.qtgui_freq_sink_x_0 = qtgui.freq_sink_c(
             fft_len, #size
             firdes.WIN_BLACKMAN_hARRIS, #wintype
@@ -339,12 +369,13 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
 
         self._qtgui_const_sink_x_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0.pyqwidget(), Qt.QWidget)
         self.tab_const_layout_2.addWidget(self._qtgui_const_sink_x_0_win)
-        self._num_syms_range = Range(1, 40, 1, 1, 200)
+        self.ofdm_pilot_comp_cc_0 = ofdm.pilot_comp_cc(fft_len, apply_comp, 16)
+        self._num_syms_range = Range(1, 40, 1, 20, 200)
         self._num_syms_win = RangeWidget(self._num_syms_range, self.set_num_syms, '# of Symbols per Pkt', "counter_slider", float)
-        self.top_grid_layout.addWidget(self._num_syms_win, 11, 0, 1, 8)
+        self.top_grid_layout.addWidget(self._num_syms_win, 11, 0, 1, 4)
         for r in range(11, 12):
             self.top_grid_layout.setRowStretch(r, 1)
-        for c in range(0, 8):
+        for c in range(0, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
         self.iio_pluto_source_0 = iio.pluto_source('usb:1.4.5', int(freqc), int(samp_rate), 20000000, 32768, True, True, True, 'manual', rx_gain, '', True)
         self.iio_pluto_sink_0 = iio.pluto_sink('usb:1.3.5', int(freqc), int(samp_rate), 20000000, 32768, False, 10.0, '', True)
@@ -366,7 +397,7 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
             debug_log=False,
             scramble_bits=False)
         self.digital_ofdm_sync_sc_cfb_0 = digital.ofdm_sync_sc_cfb(fft_len, fft_len//4, False, 0.9)
-        self.digital_ofdm_serializer_vcc_payload = digital.ofdm_serializer_vcc(fft_len, occupied_carriers, length_tag_key, packet_length_tag_key, 1, '', True)
+        self.digital_ofdm_serializer_vcc_payload = digital.ofdm_serializer_vcc(fft_len, occupied_carriers, length_tag_key, packet_length_tag_key, 0, '', True)
         self.digital_ofdm_serializer_vcc_header = digital.ofdm_serializer_vcc(fft_len, occupied_carriers, length_tag_key, '', 0, '', True)
         self.digital_ofdm_frame_equalizer_vcvc_1 = digital.ofdm_frame_equalizer_vcvc(payload_equalizer.base(), fft_len//4, length_tag_key, True, 0)
         self.digital_ofdm_frame_equalizer_vcvc_0 = digital.ofdm_frame_equalizer_vcvc(header_equalizer.base(), fft_len//4, length_tag_key, True, 1)
@@ -395,7 +426,9 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, 64)
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, packet_len, packet_length_tag_key)
         self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(payload_mod.bits_per_symbol(), 8, packet_length_tag_key, True, gr.GR_LSB_FIRST)
+        self.blocks_multiply_xx_1 = blocks.multiply_vcc(1)
         self.blocks_multiply_xx_0 = blocks.multiply_vcc(1)
+        self.blocks_multiply_const_vxx_2 = blocks.multiply_const_ff(apply_comp_f)
         self.blocks_multiply_const_vxx_1 = blocks.multiply_const_cc(mp_gain)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_cc(tx_amp)
         self.blocks_keep_m_in_n_0 = blocks.keep_m_in_n(gr.sizeof_gr_complex, 1, fft_len, sc_select)
@@ -403,6 +436,7 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.blocks_delay_1 = blocks.delay(gr.sizeof_gr_complex*1, cp_delay)
         self.blocks_delay_0 = blocks.delay(gr.sizeof_gr_complex*1, fft_len+fft_len//4)
         self.blocks_add_xx_0 = blocks.add_vcc(1)
+        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, fo, 1, 0, 0)
         self.analog_random_source_x_0 = blocks.vector_source_b(list(map(int, numpy.random.randint(0, 255, 1000))), True)
         self.analog_frequency_modulator_fc_0 = analog.frequency_modulator_fc(-2.0/fft_len)
 
@@ -414,15 +448,18 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.digital_header_payload_demux_0, 'header_data'))
         self.connect((self.analog_frequency_modulator_fc_0, 0), (self.blocks_multiply_xx_0, 0))
         self.connect((self.analog_random_source_x_0, 0), (self.blocks_stream_to_tagged_stream_0, 0))
-        self.connect((self.blocks_add_xx_0, 0), (self.blocks_delay_0, 0))
-        self.connect((self.blocks_add_xx_0, 0), (self.digital_ofdm_sync_sc_cfb_0, 0))
+        self.connect((self.analog_sig_source_x_0, 0), (self.blocks_multiply_xx_1, 1))
+        self.connect((self.blocks_add_xx_0, 0), (self.blocks_multiply_xx_1, 0))
         self.connect((self.blocks_delay_0, 0), (self.blocks_multiply_xx_0, 1))
         self.connect((self.blocks_delay_1, 0), (self.blocks_stream_to_vector_0, 0))
         self.connect((self.blocks_delay_2, 0), (self.blocks_multiply_const_vxx_1, 0))
         self.connect((self.blocks_keep_m_in_n_0, 0), (self.qtgui_const_sink_x_0_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.iio_pluto_sink_0, 0))
         self.connect((self.blocks_multiply_const_vxx_1, 0), (self.blocks_add_xx_0, 1))
+        self.connect((self.blocks_multiply_const_vxx_2, 0), (self.analog_frequency_modulator_fc_0, 0))
         self.connect((self.blocks_multiply_xx_0, 0), (self.digital_header_payload_demux_0, 0))
+        self.connect((self.blocks_multiply_xx_1, 0), (self.blocks_delay_0, 0))
+        self.connect((self.blocks_multiply_xx_1, 0), (self.digital_ofdm_sync_sc_cfb_0, 0))
         self.connect((self.blocks_repack_bits_bb_0, 0), (self.digital_crc32_bb_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.digital_ofdm_tx_0, 0))
         self.connect((self.blocks_stream_to_vector_0, 0), (self.fft_vxx_1, 0))
@@ -430,7 +467,7 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_vector_to_stream_0_0, 0), (self.blocks_delay_1, 0))
         self.connect((self.blocks_vector_to_stream_0_0, 0), (self.qtgui_freq_sink_x_0, 0))
         self.connect((self.blocks_vector_to_stream_0_0_1, 0), (self.blocks_keep_m_in_n_0, 0))
-        self.connect((self.blocks_vector_to_stream_0_0_1_0, 0), (self.wes_ofdm_pilot_comp_cc_0, 0))
+        self.connect((self.blocks_vector_to_stream_0_0_1_0, 0), (self.ofdm_pilot_comp_cc_0, 0))
         self.connect((self.digital_constellation_decoder_cb_0, 0), (self.digital_packet_headerparser_b_0, 0))
         self.connect((self.digital_constellation_decoder_cb_1, 0), (self.blocks_repack_bits_bb_0, 0))
         self.connect((self.digital_crc32_bb_0, 0), (self.blocks_tag_debug_1, 0))
@@ -442,7 +479,7 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.connect((self.digital_ofdm_serializer_vcc_header, 0), (self.digital_constellation_decoder_cb_0, 0))
         self.connect((self.digital_ofdm_serializer_vcc_payload, 0), (self.digital_constellation_decoder_cb_1, 0))
         self.connect((self.digital_ofdm_serializer_vcc_payload, 0), (self.qtgui_const_sink_x_0, 0))
-        self.connect((self.digital_ofdm_sync_sc_cfb_0, 0), (self.analog_frequency_modulator_fc_0, 0))
+        self.connect((self.digital_ofdm_sync_sc_cfb_0, 0), (self.blocks_multiply_const_vxx_2, 0))
         self.connect((self.digital_ofdm_sync_sc_cfb_0, 1), (self.digital_header_payload_demux_0, 1))
         self.connect((self.digital_ofdm_tx_0, 0), (self.blocks_multiply_const_vxx_0, 0))
         self.connect((self.fft_vxx_0, 0), (self.digital_ofdm_chanest_vcvc_0, 0))
@@ -450,8 +487,8 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.connect((self.fft_vxx_1, 0), (self.digital_ofdm_frame_equalizer_vcvc_1, 0))
         self.connect((self.iio_pluto_source_0, 0), (self.blocks_add_xx_0, 0))
         self.connect((self.iio_pluto_source_0, 0), (self.blocks_delay_2, 0))
-        self.connect((self.wes_ofdm_pilot_comp_cc_0, 0), (self.blocks_stream_to_vector_1, 0))
-        self.connect((self.wes_ofdm_pilot_comp_cc_0, 0), (self.qtgui_const_sink_x_0_1, 0))
+        self.connect((self.ofdm_pilot_comp_cc_0, 0), (self.blocks_stream_to_vector_1, 0))
+        self.connect((self.ofdm_pilot_comp_cc_0, 0), (self.qtgui_const_sink_x_0_1, 0))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "rx_ofdm")
@@ -576,6 +613,7 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
+        self.analog_sig_source_x_0.set_sampling_freq(self.samp_rate)
         self.iio_pluto_sink_0.set_params(int(self.freqc), int(self.samp_rate), 20000000, 10.0, '', True)
         self.iio_pluto_source_0.set_params(int(self.freqc), int(self.samp_rate), 20000000, True, True, True, 'manual', self.rx_gain, '', True)
         self.qtgui_freq_sink_x_0.set_frequency_range(0, self.samp_rate)
@@ -641,6 +679,13 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.iio_pluto_sink_0.set_params(int(self.freqc), int(self.samp_rate), 20000000, 10.0, '', True)
         self.iio_pluto_source_0.set_params(int(self.freqc), int(self.samp_rate), 20000000, True, True, True, 'manual', self.rx_gain, '', True)
 
+    def get_fo(self):
+        return self.fo
+
+    def set_fo(self, fo):
+        self.fo = fo
+        self.analog_sig_source_x_0.set_frequency(self.fo)
+
     def get_cp_delay(self):
         return self.cp_delay
 
@@ -648,11 +693,21 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.cp_delay = cp_delay
         self.blocks_delay_1.set_dly(self.cp_delay)
 
+    def get_apply_comp_f(self):
+        return self.apply_comp_f
+
+    def set_apply_comp_f(self, apply_comp_f):
+        self.apply_comp_f = apply_comp_f
+        self._apply_comp_f_callback(self.apply_comp_f)
+        self.blocks_multiply_const_vxx_2.set_k(self.apply_comp_f)
+
     def get_apply_comp(self):
         return self.apply_comp
 
     def set_apply_comp(self, apply_comp):
         self.apply_comp = apply_comp
+        self._apply_comp_callback(self.apply_comp)
+        self.ofdm_pilot_comp_cc_0.toggle_comp(self.apply_comp)
 
 
 

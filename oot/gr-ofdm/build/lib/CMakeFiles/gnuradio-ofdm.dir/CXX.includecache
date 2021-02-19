@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/ofdm/api.h
+gnuradio/attributes.h
+-
+
+../include/ofdm/pilot_comp_cc.h
+ofdm/api.h
+-
+gnuradio/block.h
+-
+
+/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.cc
+config.h
+/home/wes/course/oot/gr-ofdm/lib/config.h
+gnuradio/io_signature.h
+-
+pilot_comp_cc_impl.h
+/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h
+
+/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.h
+ofdm/pilot_comp_cc.h
+-
+
