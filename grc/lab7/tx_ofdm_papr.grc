@@ -53,7 +53,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [328, 12.0]
+    coordinate: [58, 157]
     rotation: 0
     state: enabled
 - name: frame_len
