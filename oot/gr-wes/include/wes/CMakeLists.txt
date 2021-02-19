@@ -26,5 +26,6 @@ install(FILES
     costas_cc.h
     ber.h
     hamming_encoder.h
-    hamming_decoder.h DESTINATION include/wes
+    hamming_decoder.h
+    max_ff.h DESTINATION include/wes
 )
