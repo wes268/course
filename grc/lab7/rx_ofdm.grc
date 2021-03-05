@@ -1567,7 +1567,7 @@ blocks:
     color9: '"dark green"'
     comment: ''
     ctrlpanel: 'True'
-    fc: '0'
+    fc: freqc
     fftsize: fft_len
     freqhalf: 'True'
     grid: 'True'
@@ -1613,7 +1613,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [390, 1191]
+    coordinate: [388, 1191]
     rotation: 0
     state: true
 - name: tab_const

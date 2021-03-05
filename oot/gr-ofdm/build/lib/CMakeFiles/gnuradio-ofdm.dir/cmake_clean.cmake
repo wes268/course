@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.o"
   "CMakeFiles/gnuradio-ofdm.dir/pilot_comp_cc_impl.cc.o"
   "libgnuradio-ofdm.pdb"
   "libgnuradio-ofdm.so"

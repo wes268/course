@@ -41,6 +41,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ofdm" TYPE FILE FILES
     "/home/wes/course/oot/gr-ofdm/include/ofdm/api.h"
     "/home/wes/course/oot/gr-ofdm/include/ofdm/pilot_comp_cc.h"
+    "/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h"
     )
 endif()
 

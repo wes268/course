@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
   <compounddef id="dir_99f5f4717775f726fdb39d7ccabb83e0" kind="dir">
     <compoundname>ofdm</compoundname>
+    <innerfile refid="alamouti__cc_8h">alamouti_cc.h</innerfile>
     <innerfile refid="api_8h">api.h</innerfile>
     <innerfile refid="pilot__comp__cc_8h">pilot_comp_cc.h</innerfile>
     <briefdescription>

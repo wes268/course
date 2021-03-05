@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../include/ofdm/alamouti_cc.h
+ofdm/api.h
+-
+gnuradio/block.h
+-
+
 ../include/ofdm/api.h
 gnuradio/attributes.h
 -
@@ -57,6 +63,8 @@ limits.h
 -
 ofdm/pilot_comp_cc.h
 /home/wes/course/oot/gr-ofdm/build/swig/CMakeFiles/ofdm_swig.dir/ofdm/pilot_comp_cc.h
+ofdm/alamouti_cc.h
+/home/wes/course/oot/gr-ofdm/build/swig/CMakeFiles/ofdm_swig.dir/ofdm/alamouti_cc.h
 float.h
 -
 math.h

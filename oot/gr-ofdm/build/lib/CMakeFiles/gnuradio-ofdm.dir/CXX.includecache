@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+../include/ofdm/alamouti_cc.h
+ofdm/api.h
+-
+gnuradio/block.h
+-
+
 ../include/ofdm/api.h
 gnuradio/attributes.h
 -
@@ -14,6 +20,20 @@ gnuradio/attributes.h
 ofdm/api.h
 -
 gnuradio/block.h
+-
+
+/home/wes/course/oot/gr-ofdm/lib/alamouti_cc_impl.cc
+config.h
+/home/wes/course/oot/gr-ofdm/lib/config.h
+gnuradio/io_signature.h
+-
+alamouti_cc_impl.h
+/home/wes/course/oot/gr-ofdm/lib/alamouti_cc_impl.h
+
+/home/wes/course/oot/gr-ofdm/lib/alamouti_cc_impl.h
+ofdm/alamouti_cc.h
+-
+gnuradio/random.h
 -
 
 /home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.cc

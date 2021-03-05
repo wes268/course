@@ -70,14 +70,29 @@ lib/CMakeFiles/gnuradio-ofdm.dir/pilot_comp_cc_impl.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gnuradio-ofdm.dir/pilot_comp_cc_impl.cc.s"
 	cd /home/wes/course/oot/gr-ofdm/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.cc -o CMakeFiles/gnuradio-ofdm.dir/pilot_comp_cc_impl.cc.s
 
+lib/CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.o: lib/CMakeFiles/gnuradio-ofdm.dir/flags.make
+lib/CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.o: ../lib/alamouti_cc_impl.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wes/course/oot/gr-ofdm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object lib/CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.o"
+	cd /home/wes/course/oot/gr-ofdm/build/lib && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.o -c /home/wes/course/oot/gr-ofdm/lib/alamouti_cc_impl.cc
+
+lib/CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.i"
+	cd /home/wes/course/oot/gr-ofdm/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wes/course/oot/gr-ofdm/lib/alamouti_cc_impl.cc > CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.i
+
+lib/CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.s"
+	cd /home/wes/course/oot/gr-ofdm/build/lib && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wes/course/oot/gr-ofdm/lib/alamouti_cc_impl.cc -o CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.s
+
 # Object files for target gnuradio-ofdm
 gnuradio__ofdm_OBJECTS = \
-"CMakeFiles/gnuradio-ofdm.dir/pilot_comp_cc_impl.cc.o"
+"CMakeFiles/gnuradio-ofdm.dir/pilot_comp_cc_impl.cc.o" \
+"CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.o"
 
 # External object files for target gnuradio-ofdm
 gnuradio__ofdm_EXTERNAL_OBJECTS =
 
 lib/libgnuradio-ofdm.so.v1.0-compat-xxx-xunknown: lib/CMakeFiles/gnuradio-ofdm.dir/pilot_comp_cc_impl.cc.o
+lib/libgnuradio-ofdm.so.v1.0-compat-xxx-xunknown: lib/CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.o
 lib/libgnuradio-ofdm.so.v1.0-compat-xxx-xunknown: lib/CMakeFiles/gnuradio-ofdm.dir/build.make
 lib/libgnuradio-ofdm.so.v1.0-compat-xxx-xunknown: /usr/lib/x86_64-linux-gnu/libgnuradio-runtime.so.3.8.1.0
 lib/libgnuradio-ofdm.so.v1.0-compat-xxx-xunknown: /usr/lib/x86_64-linux-gnu/libgnuradio-pmt.so.3.8.1.0
@@ -93,7 +108,7 @@ lib/libgnuradio-ofdm.so.v1.0-compat-xxx-xunknown: /usr/lib/x86_64-linux-gnu/libl
 lib/libgnuradio-ofdm.so.v1.0-compat-xxx-xunknown: /usr/lib/x86_64-linux-gnu/libgmpxx.so
 lib/libgnuradio-ofdm.so.v1.0-compat-xxx-xunknown: /usr/lib/x86_64-linux-gnu/libgmp.so
 lib/libgnuradio-ofdm.so.v1.0-compat-xxx-xunknown: lib/CMakeFiles/gnuradio-ofdm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wes/course/oot/gr-ofdm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libgnuradio-ofdm.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wes/course/oot/gr-ofdm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library libgnuradio-ofdm.so"
 	cd /home/wes/course/oot/gr-ofdm/build/lib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gnuradio-ofdm.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/wes/course/oot/gr-ofdm/build/lib && $(CMAKE_COMMAND) -E cmake_symlink_library libgnuradio-ofdm.so.v1.0-compat-xxx-xunknown libgnuradio-ofdm.so.1.0.0git libgnuradio-ofdm.so
 

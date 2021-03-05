@@ -5,6 +5,11 @@
   "file": "/home/wes/course/oot/gr-ofdm/lib/pilot_comp_cc_impl.cc"
 },
 {
+  "directory": "/home/wes/course/oot/gr-ofdm/build/lib",
+  "command": "/usr/bin/c++  -DBOOST_ALL_NO_LIB -DBOOST_ATOMIC_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_REGEX_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DBOOST_THREAD_DYN_LINK -DGR_CTRLPORT -Dgnuradio_ofdm_EXPORTS -I/home/wes/course/oot/gr-ofdm/lib/../include  -O3 -DNDEBUG -fPIC   -fvisibility=hidden -std=gnu++11 -o CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.o -c /home/wes/course/oot/gr-ofdm/lib/alamouti_cc_impl.cc",
+  "file": "/home/wes/course/oot/gr-ofdm/lib/alamouti_cc_impl.cc"
+},
+{
   "directory": "/home/wes/course/oot/gr-ofdm/build/swig",
   "command": "/usr/bin/c++  -DBOOST_ALL_NO_LIB -DBOOST_ATOMIC_DYN_LINK -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_REGEX_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DBOOST_THREAD_DYN_LINK -DGR_CTRLPORT -Dofdm_swig_EXPORTS -I/home/wes/course/oot/gr-ofdm/build/swig -I/home/wes/course/oot/gr-ofdm/swig -I/usr/include/gnuradio/swig -I/home/wes/course/oot/gr-ofdm/lib/../include -isystem /usr/include/python3.8  -O3 -DNDEBUG -fPIC   -fvisibility=hidden -std=gnu++11 -o CMakeFiles/ofdm_swig.dir/CMakeFiles/ofdm_swig.dir/ofdm_swigPYTHON_wrap.cxx.o -c /home/wes/course/oot/gr-ofdm/build/swig/CMakeFiles/ofdm_swig.dir/ofdm_swigPYTHON_wrap.cxx",
   "file": "/home/wes/course/oot/gr-ofdm/build/swig/CMakeFiles/ofdm_swig.dir/ofdm_swigPYTHON_wrap.cxx"

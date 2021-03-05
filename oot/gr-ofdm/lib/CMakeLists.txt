@@ -25,6 +25,7 @@ include(GrPlatform) #define LIB_SUFFIX
 
 list(APPEND ofdm_sources
     pilot_comp_cc_impl.cc
+    alamouti_cc_impl.cc
 )
 
 set(ofdm_sources "${ofdm_sources}" PARENT_SCOPE)

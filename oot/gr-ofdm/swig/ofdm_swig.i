@@ -9,7 +9,10 @@
 
 %{
 #include "ofdm/pilot_comp_cc.h"
+#include "ofdm/alamouti_cc.h"
 %}
 
 %include "ofdm/pilot_comp_cc.h"
 GR_SWIG_BLOCK_MAGIC2(ofdm, pilot_comp_cc);
+%include "ofdm/alamouti_cc.h"
+GR_SWIG_BLOCK_MAGIC2(ofdm, alamouti_cc);

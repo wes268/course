@@ -208,7 +208,7 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.qtgui_freq_sink_x_0 = qtgui.freq_sink_c(
             fft_len, #size
             firdes.WIN_BLACKMAN_hARRIS, #wintype
-            0, #fc
+            freqc, #fc
             samp_rate, #bw
             "Channel Response", #name
             1
@@ -616,7 +616,7 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.analog_sig_source_x_0.set_sampling_freq(self.samp_rate)
         self.iio_pluto_sink_0.set_params(int(self.freqc), int(self.samp_rate), 20000000, 10.0, '', True)
         self.iio_pluto_source_0.set_params(int(self.freqc), int(self.samp_rate), 20000000, True, True, True, 'manual', self.rx_gain, '', True)
-        self.qtgui_freq_sink_x_0.set_frequency_range(0, self.samp_rate)
+        self.qtgui_freq_sink_x_0.set_frequency_range(self.freqc, self.samp_rate)
 
     def get_rx_gain(self):
         return self.rx_gain
@@ -678,6 +678,7 @@ class rx_ofdm(gr.top_block, Qt.QWidget):
         self.freqc = freqc
         self.iio_pluto_sink_0.set_params(int(self.freqc), int(self.samp_rate), 20000000, 10.0, '', True)
         self.iio_pluto_source_0.set_params(int(self.freqc), int(self.samp_rate), 20000000, True, True, True, 'manual', self.rx_gain, '', True)
+        self.qtgui_freq_sink_x_0.set_frequency_range(self.freqc, self.samp_rate)
 
     def get_fo(self):
         return self.fo

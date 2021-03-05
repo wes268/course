@@ -48,12 +48,12 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '32'
+    value: '256'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [58, 157]
+    coordinate: [63, 161]
     rotation: 0
     state: enabled
 - name: frame_len

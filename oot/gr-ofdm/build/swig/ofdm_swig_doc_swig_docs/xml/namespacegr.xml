@@ -7,6 +7,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/wes/course/oot/gr-ofdm/include/ofdm/pilot_comp_cc.h" line="27" column="12"/>
+    <location file="/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h" line="27" column="12"/>
   </compounddef>
 </doxygen>

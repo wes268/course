@@ -75,7 +75,7 @@ class tx_ofdm_papr(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.fft_len = fft_len = 32
+        self.fft_len = fft_len = 256
         self.fft2 = fft2 = int(fft_len/2)
         self.pilot_symbols = pilot_symbols = ((1, 1, 1, -1,),)
         self.pilot_carriers = pilot_carriers = ((-21, -7, 7, 21,),)

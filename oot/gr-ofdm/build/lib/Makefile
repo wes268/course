@@ -182,6 +182,33 @@ gnuradio-ofdm/fast:
 	cd /home/wes/course/oot/gr-ofdm/build && $(MAKE) -f lib/CMakeFiles/gnuradio-ofdm.dir/build.make lib/CMakeFiles/gnuradio-ofdm.dir/build
 .PHONY : gnuradio-ofdm/fast
 
+alamouti_cc_impl.o: alamouti_cc_impl.cc.o
+
+.PHONY : alamouti_cc_impl.o
+
+# target to build an object file
+alamouti_cc_impl.cc.o:
+	cd /home/wes/course/oot/gr-ofdm/build && $(MAKE) -f lib/CMakeFiles/gnuradio-ofdm.dir/build.make lib/CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.o
+.PHONY : alamouti_cc_impl.cc.o
+
+alamouti_cc_impl.i: alamouti_cc_impl.cc.i
+
+.PHONY : alamouti_cc_impl.i
+
+# target to preprocess a source file
+alamouti_cc_impl.cc.i:
+	cd /home/wes/course/oot/gr-ofdm/build && $(MAKE) -f lib/CMakeFiles/gnuradio-ofdm.dir/build.make lib/CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.i
+.PHONY : alamouti_cc_impl.cc.i
+
+alamouti_cc_impl.s: alamouti_cc_impl.cc.s
+
+.PHONY : alamouti_cc_impl.s
+
+# target to generate assembly for a file
+alamouti_cc_impl.cc.s:
+	cd /home/wes/course/oot/gr-ofdm/build && $(MAKE) -f lib/CMakeFiles/gnuradio-ofdm.dir/build.make lib/CMakeFiles/gnuradio-ofdm.dir/alamouti_cc_impl.cc.s
+.PHONY : alamouti_cc_impl.cc.s
+
 pilot_comp_cc_impl.o: pilot_comp_cc_impl.cc.o
 
 .PHONY : pilot_comp_cc_impl.o
@@ -223,6 +250,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... gnuradio-ofdm"
+	@echo "... alamouti_cc_impl.o"
+	@echo "... alamouti_cc_impl.i"
+	@echo "... alamouti_cc_impl.s"
 	@echo "... pilot_comp_cc_impl.o"
 	@echo "... pilot_comp_cc_impl.i"
 	@echo "... pilot_comp_cc_impl.s"

@@ -19,5 +19,6 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    ofdm_pilot_comp_cc.block.yml DESTINATION share/gnuradio/grc/blocks
+    ofdm_pilot_comp_cc.block.yml
+    ofdm_alamouti_cc.block.yml DESTINATION share/gnuradio/grc/blocks
 )

@@ -23,5 +23,6 @@
 ########################################################################
 install(FILES
     api.h
-    pilot_comp_cc.h DESTINATION include/ofdm
+    pilot_comp_cc.h
+    alamouti_cc.h DESTINATION include/ofdm
 )

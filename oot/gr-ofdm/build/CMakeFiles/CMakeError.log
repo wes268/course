@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/wes/course/oot/gr-ofdm/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_77b38/fast && /usr/bin/make -f CMakeFiles/cmTC_77b38.dir/build.make CMakeFiles/cmTC_77b38.dir/build
+Run Build Command(s):/usr/bin/make cmTC_b7c2c/fast && /usr/bin/make -f CMakeFiles/cmTC_b7c2c.dir/build.make CMakeFiles/cmTC_b7c2c.dir/build
 make[1]: Entering directory '/home/wes/course/oot/gr-ofdm/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_77b38.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -std=gnu11 -o CMakeFiles/cmTC_77b38.dir/src.c.o   -c /home/wes/course/oot/gr-ofdm/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_77b38
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77b38.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_77b38.dir/src.c.o  -o cmTC_77b38 
-/usr/bin/ld: CMakeFiles/cmTC_77b38.dir/src.c.o: in function `main':
+Building C object CMakeFiles/cmTC_b7c2c.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -std=gnu11 -o CMakeFiles/cmTC_b7c2c.dir/src.c.o   -c /home/wes/course/oot/gr-ofdm/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b7c2c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7c2c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_b7c2c.dir/src.c.o  -o cmTC_b7c2c 
+/usr/bin/ld: CMakeFiles/cmTC_b7c2c.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_77b38.dir/build.make:87: cmTC_77b38] Error 1
+make[1]: *** [CMakeFiles/cmTC_b7c2c.dir/build.make:87: cmTC_b7c2c] Error 1
 make[1]: Leaving directory '/home/wes/course/oot/gr-ofdm/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_77b38/fast] Error 2
+make: *** [Makefile:121: cmTC_b7c2c/fast] Error 2
 
 
 Source file was:
@@ -41,18 +41,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/wes/course/oot/gr-ofdm/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_7df15/fast && /usr/bin/make -f CMakeFiles/cmTC_7df15.dir/build.make CMakeFiles/cmTC_7df15.dir/build
+Run Build Command(s):/usr/bin/make cmTC_874b9/fast && /usr/bin/make -f CMakeFiles/cmTC_874b9.dir/build.make CMakeFiles/cmTC_874b9.dir/build
 make[1]: Entering directory '/home/wes/course/oot/gr-ofdm/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7df15.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu11 -o CMakeFiles/cmTC_7df15.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_7df15
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7df15.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_7df15.dir/CheckFunctionExists.c.o  -o cmTC_7df15  -lpthreads 
+Building C object CMakeFiles/cmTC_874b9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -std=gnu11 -o CMakeFiles/cmTC_874b9.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_874b9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_874b9.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_874b9.dir/CheckFunctionExists.c.o  -o cmTC_874b9  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_7df15.dir/build.make:87: cmTC_7df15] Error 1
+make[1]: *** [CMakeFiles/cmTC_874b9.dir/build.make:87: cmTC_874b9] Error 1
 make[1]: Leaving directory '/home/wes/course/oot/gr-ofdm/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_7df15/fast] Error 2
+make: *** [Makefile:121: cmTC_874b9/fast] Error 2
 
 
 
