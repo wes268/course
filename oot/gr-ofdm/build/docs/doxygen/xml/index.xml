@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="classgr_1_1ofdm_1_1alamouti__cc" kind="class"><name>gr::ofdm::alamouti_cc</name>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc_1a8cb1ac08591a76f7476ea8e4d0e3e24c" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc_1a08e156b32f468a75ab2fc956a64050bf" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc_1aa3f500e3a5ff866673bf1abd82694b9d" kind="function"><name>set_p_xy</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc_1a9924cfcdc90970180b7aad75a4e6440a" kind="function"><name>set_noise</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc_1aa6042fb6216598172852749091df1bb2" kind="function"><name>set_mimo_option</name></member>
+  </compound>
+  <compound refid="classgr_1_1ofdm_1_1alamouti__cc__impl" kind="class"><name>gr::ofdm::alamouti_cc_impl</name>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1ab3ec4753fa7bf5ce9e06f15531c53025" kind="variable"><name>d_p_xy</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1ac3136a1022130ab486860df30d18cc01" kind="variable"><name>d_rng</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1a2d4476cefdb49c4412681c901f18aaba" kind="variable"><name>d_std_dev</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1adafa5250e065d2b023aeab8dacad0203" kind="variable"><name>d_mimo_option</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1a744ff1fa28b2c82f71b17d4c53e94ca0" kind="function"><name>alamouti_cc_impl</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1a1075afe9b2f69282c54f434d6f0b5c77" kind="function"><name>~alamouti_cc_impl</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1a05ecd4acc95ab287eb88bde49da534f1" kind="function"><name>forecast</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1a0d474001cffb3e1e82c9e91a4a8dce4d" kind="function"><name>general_work</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1a716e1cdb0c1ffd2ebf9ff5d7bdea9870" kind="function"><name>set_p_xy</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1adc3efe1a0fe070c39d22dba563c4792b" kind="function"><name>set_noise</name></member>
+    <member refid="classgr_1_1ofdm_1_1alamouti__cc__impl_1a3fe1be26726ac67f1c2542f1d83fb462" kind="function"><name>set_mimo_option</name></member>
+  </compound>
+  <compound refid="classgr_1_1ofdm_1_1pilot__comp__cc" kind="class"><name>gr::ofdm::pilot_comp_cc</name>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc_1ac21520c69b3ee744213afb97b0b39ab1" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc_1acf8178204344b9f1eef47800d99ff963" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc_1a469f1448a9b402c1b1a4b4ab321454e0" kind="function"><name>toggle_comp</name></member>
+  </compound>
+  <compound refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl" kind="class"><name>gr::ofdm::pilot_comp_cc_impl</name>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1add84ebbd5c637f0481ac68d904d978a3" kind="variable"><name>d_fft_len</name></member>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a29b48479026ec30726b31bfe10d8f6b8" kind="variable"><name>d_apply_comp</name></member>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a734e651e6740013f5c896015cb93239c" kind="variable"><name>d_num_syms</name></member>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a39b222c2ac3835176dfed323b91bcc16" kind="function"><name>pilot_comp_cc_impl</name></member>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1ae8a9203efe8c7ace75c46e971ac8fbb1" kind="function"><name>~pilot_comp_cc_impl</name></member>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a8a42530cc7019bb89ffa34893bc3057d" kind="function"><name>forecast</name></member>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a3b58a26c4997597022438f1632cc1659" kind="function"><name>general_work</name></member>
+    <member refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl_1a1f59cb8d5a421d94e4cf01e5bea6a7ba" kind="function"><name>toggle_comp</name></member>
+  </compound>
+  <compound refid="namespacegr" kind="namespace"><name>gr</name>
+  </compound>
+  <compound refid="namespacegr_1_1ofdm" kind="namespace"><name>gr::ofdm</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="alamouti__cc_8h" kind="file"><name>alamouti_cc.h</name>
+  </compound>
+  <compound refid="alamouti__cc__impl_8h" kind="file"><name>alamouti_cc_impl.h</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+    <member refid="api_8h_1ae5b00e31ffa80275f53aa2e386ecca33" kind="define"><name>OFDM_API</name></member>
+  </compound>
+  <compound refid="group__defs_8dox" kind="file"><name>group_defs.dox</name>
+  </compound>
+  <compound refid="main__page_8dox" kind="file"><name>main_page.dox</name>
+  </compound>
+  <compound refid="pilot__comp__cc_8h" kind="file"><name>pilot_comp_cc.h</name>
+  </compound>
+  <compound refid="pilot__comp__cc__impl_8h" kind="file"><name>pilot_comp_cc_impl.h</name>
+  </compound>
+  <compound refid="group__block" kind="group"><name>block</name>
+  </compound>
+  <compound refid="dir_49e56c817e5e54854c35e136979f97ca" kind="dir"><name>docs</name>
+  </compound>
+  <compound refid="dir_359d2bec989c9a8deeeb9aee335c1c76" kind="dir"><name>doxygen</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir"><name>lib</name>
+  </compound>
+  <compound refid="dir_99f5f4717775f726fdb39d7ccabb83e0" kind="dir"><name>ofdm</name>
+  </compound>
+  <compound refid="dir_f2cd86917185299abf5a1f0679072f3c" kind="dir"><name>other</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

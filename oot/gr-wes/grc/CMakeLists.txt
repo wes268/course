@@ -21,5 +21,6 @@ install(FILES
     wes_costas_cc.block.yml
     wes_ber.block.yml
     wes_hamming_encoder.block.yml
-    wes_hamming_decoder.block.yml DESTINATION share/gnuradio/grc/blocks
+    wes_hamming_decoder.block.yml
+    wes_max_ff.block.yml DESTINATION share/gnuradio/grc/blocks
 )

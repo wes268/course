@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1ofdm_1_1alamouti__cc" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::ofdm::alamouti_cc</compoundname>
+    <basecompoundref prot="public" virt="virtual">block</basecompoundref>
+    <includes refid="alamouti__cc_8h" local="no">alamouti_cc.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1ofdm_1_1alamouti__cc_1a8cb1ac08591a76f7476ea8e4d0e3e24c" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1ofdm_1_1alamouti__cc" kindref="compound">alamouti_cc</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;alamouti_cc&gt; gr::ofdm::alamouti_cc::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h" line="38" column="33" bodyfile="/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1ofdm_1_1alamouti__cc_1a08e156b32f468a75ab2fc956a64050bf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1ofdm_1_1alamouti__cc_1a8cb1ac08591a76f7476ea8e4d0e3e24c" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::ofdm::alamouti_cc::make</definition>
+        <argsstring>(float p_xy, float std_dev, int mimo_option)</argsstring>
+        <name>make</name>
+        <param>
+          <type>float</type>
+          <declname>p_xy</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>std_dev</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mimo_option</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1ofdm_1_1alamouti__cc" kindref="compound">ofdm::alamouti_cc</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1ofdm_1_1alamouti__cc" kindref="compound">ofdm::alamouti_cc</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1ofdm_1_1alamouti__cc_1a08e156b32f468a75ab2fc956a64050bf" kindref="member">ofdm::alamouti_cc::make</ref> is the public interface for creating new instances. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h" line="48" column="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1ofdm_1_1alamouti__cc_1aa3f500e3a5ff866673bf1abd82694b9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::ofdm::alamouti_cc::set_p_xy</definition>
+        <argsstring>(float p_xy)=0</argsstring>
+        <name>set_p_xy</name>
+        <param>
+          <type>float</type>
+          <declname>p_xy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h" line="50" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1ofdm_1_1alamouti__cc_1a9924cfcdc90970180b7aad75a4e6440a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::ofdm::alamouti_cc::set_noise</definition>
+        <argsstring>(float std_dev)=0</argsstring>
+        <name>set_noise</name>
+        <param>
+          <type>float</type>
+          <declname>std_dev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h" line="51" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1ofdm_1_1alamouti__cc_1aa6042fb6216598172852749091df1bb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::ofdm::alamouti_cc::set_mimo_option</definition>
+        <argsstring>(int mimo_option)=0</argsstring>
+        <name>set_mimo_option</name>
+        <param>
+          <type>int</type>
+          <declname>mimo_option</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h" line="52" column="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>block</label>
+      </node>
+      <node id="1">
+        <label>gr::ofdm::alamouti_cc</label>
+        <link refid="classgr_1_1ofdm_1_1alamouti__cc"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>block</label>
+      </node>
+      <node id="1">
+        <label>gr::ofdm::alamouti_cc</label>
+        <link refid="classgr_1_1ofdm_1_1alamouti__cc"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h" line="36" column="1" bodyfile="/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h" bodystart="35" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classgr_1_1ofdm_1_1alamouti__cc_1a08e156b32f468a75ab2fc956a64050bf" prot="public" virt="non-virtual"><scope>gr::ofdm::alamouti_cc</scope><name>make</name></member>
+      <member refid="classgr_1_1ofdm_1_1alamouti__cc_1aa6042fb6216598172852749091df1bb2" prot="public" virt="pure-virtual"><scope>gr::ofdm::alamouti_cc</scope><name>set_mimo_option</name></member>
+      <member refid="classgr_1_1ofdm_1_1alamouti__cc_1a9924cfcdc90970180b7aad75a4e6440a" prot="public" virt="pure-virtual"><scope>gr::ofdm::alamouti_cc</scope><name>set_noise</name></member>
+      <member refid="classgr_1_1ofdm_1_1alamouti__cc_1aa3f500e3a5ff866673bf1abd82694b9d" prot="public" virt="pure-virtual"><scope>gr::ofdm::alamouti_cc</scope><name>set_p_xy</name></member>
+      <member refid="classgr_1_1ofdm_1_1alamouti__cc_1a8cb1ac08591a76f7476ea8e4d0e3e24c" prot="public" virt="non-virtual"><scope>gr::ofdm::alamouti_cc</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

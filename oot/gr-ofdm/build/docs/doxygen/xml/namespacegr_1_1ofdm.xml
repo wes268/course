@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacegr_1_1ofdm" kind="namespace" language="C++">
+    <compoundname>gr::ofdm</compoundname>
+    <innerclass refid="classgr_1_1ofdm_1_1alamouti__cc" prot="public">gr::ofdm::alamouti_cc</innerclass>
+    <innerclass refid="classgr_1_1ofdm_1_1alamouti__cc__impl" prot="public">gr::ofdm::alamouti_cc_impl</innerclass>
+    <innerclass refid="classgr_1_1ofdm_1_1pilot__comp__cc" prot="public">gr::ofdm::pilot_comp_cc</innerclass>
+    <innerclass refid="classgr_1_1ofdm_1_1pilot__comp__cc__impl" prot="public">gr::ofdm::pilot_comp_cc_impl</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/wes/course/oot/gr-ofdm/include/ofdm/alamouti_cc.h" line="28" column="16"/>
+  </compounddef>
+</doxygen>

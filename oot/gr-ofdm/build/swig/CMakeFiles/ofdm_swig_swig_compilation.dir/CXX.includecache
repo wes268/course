@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/wes/course/oot/gr-ofdm/swig/ofdm_swig.i
+gnuradio.i
+/home/wes/course/oot/gr-ofdm/swig/gnuradio.i
+ofdm_swig_doc.i
+/home/wes/course/oot/gr-ofdm/swig/ofdm_swig_doc.i
+ofdm/pilot_comp_cc.h
+/home/wes/course/oot/gr-ofdm/swig/ofdm/pilot_comp_cc.h
+ofdm/alamouti_cc.h
+/home/wes/course/oot/gr-ofdm/swig/ofdm/alamouti_cc.h
+ofdm/pilot_comp_cc.h
+/home/wes/course/oot/gr-ofdm/swig/ofdm/pilot_comp_cc.h
+ofdm/alamouti_cc.h
+/home/wes/course/oot/gr-ofdm/swig/ofdm/alamouti_cc.h
+
