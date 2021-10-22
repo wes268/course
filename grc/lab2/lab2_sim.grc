@@ -1213,7 +1213,7 @@ blocks:
 - name: qtgui_histogram_sink_x_0
   id: qtgui_histogram_sink_x
   parameters:
-    accum: 'True'
+    accum: 'False'
     affinity: ''
     alias: ''
     alpha1: '1.0'
